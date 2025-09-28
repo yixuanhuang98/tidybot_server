@@ -23,7 +23,8 @@ def handle_object_detection(queue):
         time.sleep(0.001)
 
 def main(args):
-    hostname = f'{ROBOT_HOSTNAME_PREFIX}{args.robot_num}'
+    # hostname = f'{ROBOT_HOSTNAME_PREFIX}{args.robot_num}'
+    hostname = f'{ROBOT_HOSTNAME_PREFIX}'
     robot_idx = args.robot_num - 1
     port = 6010 + robot_idx
     window_name = 'out'

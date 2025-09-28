@@ -1,6 +1,6 @@
 import cv2 as cv
 
-ROBOT_HOSTNAME_PREFIX = 'iprl-bot'
+ROBOT_HOSTNAME_PREFIX = '192.168.0.60'
 CONN_AUTHKEY = b'secret password'
 
 ################################################################################
