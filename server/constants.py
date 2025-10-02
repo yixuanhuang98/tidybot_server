@@ -46,6 +46,6 @@ FLOOR_WIDTH = NUM_FLOOR_TILES_X * FLOOR_TILE_SIZE
 # Robot
 
 NUM_ROBOTS = 3
-ROBOT_WIDTH = 0.550  # 55.0 cm (55cm * 51cm actually)
+ROBOT_WIDTH = 0.600  # 56.0 cm (55cm * 51cm actually)
 ROBOT_HEIGHT = 0.378  # 37.8 cm
 ROBOT_DIAG = 0.665  # 66.5 cm
