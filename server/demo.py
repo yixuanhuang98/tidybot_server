@@ -17,7 +17,7 @@ from camera_server import CameraServer
 from constants import CAMERA_SERIALS, CAMERA_HEIGHT
 from constants import CONN_AUTHKEY
 from constants import FLOOR_LENGTH, FLOOR_WIDTH
-from constants import ROBOT_WIDTH, ROBOT_HEIGHT
+from constants import ROBOT_WIDTH, ROBOT_HEIGHT, ROBOT_WIDTH_X, ROBOT_WIDTH_Y
 from controller_client import ControllerClient
 from controller_server import ControllerServer
 from image_client import ImageClient
@@ -93,8 +93,8 @@ class Demo:
         ignore_boxes = []
 
         # Base at floor height (assumes heading 0)
-        min_xy = self.position_to_pixel_xy((self.robot_position[0] - ROBOT_WIDTH / 2, self.robot_position[1] + ROBOT_WIDTH / 2))
-        max_xy = self.position_to_pixel_xy((self.robot_position[0] + ROBOT_WIDTH / 2, self.robot_position[1] - ROBOT_WIDTH / 2))
+        min_xy = self.position_to_pixel_xy((self.robot_position[0] - ROBOT_WIDTH_X / 2, self.robot_position[1] + ROBOT_WIDTH_Y / 2))
+        max_xy = self.position_to_pixel_xy((self.robot_position[0] + ROBOT_WIDTH_X / 2, self.robot_position[1] - ROBOT_WIDTH_Y / 2))
         ignore_boxes.append([min_xy[0], min_xy[1], max_xy[0], max_xy[1]])
 
         # Top of base (assumes heading 0)
@@ -107,9 +107,10 @@ class Demo:
             robot_center_top = (
                 camera_center_offset_x + height_ratio_base * (self.robot_position[0] - camera_center_offset_x),
                 FLOOR_LENGTH / 4 + height_ratio_base * (self.robot_position[1] - FLOOR_LENGTH / 4))
-        robot_width_top = height_ratio_base * ROBOT_WIDTH
-        min_xy = self.position_to_pixel_xy((robot_center_top[0] - robot_width_top / 2, robot_center_top[1] + robot_width_top / 2))
-        max_xy = self.position_to_pixel_xy((robot_center_top[0] + robot_width_top / 2, robot_center_top[1] - robot_width_top / 2))
+        robot_width_top_x = height_ratio_base * ROBOT_WIDTH_X
+        robot_width_top_y = height_ratio_base * ROBOT_WIDTH_Y
+        min_xy = self.position_to_pixel_xy((robot_center_top[0] - robot_width_top_x / 2, robot_center_top[1] + robot_width_top_y / 2))
+        max_xy = self.position_to_pixel_xy((robot_center_top[0] + robot_width_top_x / 2, robot_center_top[1] - robot_width_top_y / 2))
         ignore_boxes.append([min_xy[0], min_xy[1], max_xy[0], max_xy[1]])
 
         # Arm
