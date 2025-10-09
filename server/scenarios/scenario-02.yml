@@ -35,7 +35,7 @@ receptacles:
     place_height: 0.165
   plastic storage box:
     position: [-0.610, -0.915]
-    dimensions: [0.333, 0.245]
+    dimensions: [0.73, 0.55]
     primitive_names: [place, toss]
     place_height: -0.05
   sofa:
